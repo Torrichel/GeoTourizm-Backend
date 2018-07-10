@@ -15,9 +15,8 @@ const client = new Client({
 client.connect();
 
 
+
 exports.getTripByURL = (url, cb) => {
-
-
 
     // Check if url exist
     if(!url) {

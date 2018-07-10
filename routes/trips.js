@@ -12,8 +12,6 @@ const TripService = require( path.join(__dirname, '../services/TripService') );
 
 
 
-
-
 // Defining routes
 router.get('/:url', (req, res) => {
 

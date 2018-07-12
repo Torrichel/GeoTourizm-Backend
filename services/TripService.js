@@ -43,7 +43,37 @@ exports.getTripByURL = (url, cb) => {
             cb({
                 error: false,
                 code: 200,
-                data: resp ? resp.rows : []
+                data: resp ? resp.rows[0] : {}
+            });
+        }
+
+
+    })
+
+};
+
+
+exports.getAllTrips = (cb) => {
+
+    client.query(`SELECT * FROM trips`, (err, resp) => {
+
+
+
+
+        // Check resp on existing
+        if(!resp) {
+            cb({
+                error: true,
+                code: 500,
+                message: 'Problems with connection to DB'
+            });
+        } else {
+
+
+            cb({
+                error: false,
+                code: 200,
+                data: resp.rows.length ? resp.rows : []
             });
         }
 

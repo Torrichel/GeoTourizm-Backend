@@ -38,11 +38,11 @@ app.use((req, res, next) => {
 // Requiring and mounting routes
 const trips = require( path.join(__dirname, 'routes/trips') );
 
-app.use('/trips', trips);
+app.use('/api/v1/trips', trips);
 
 
 
 
 
 
-app.listen(8888, () => console.log('Example app listening on port 8080!'));
+app.listen(8080, () => console.log('Example app listening on port 8080!'));
